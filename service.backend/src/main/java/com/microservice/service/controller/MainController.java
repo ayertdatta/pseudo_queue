@@ -1,5 +1,8 @@
 package com.microservice.service.controller;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -16,7 +19,7 @@ import com.microservice.service.utility.MainUtil;
 public class MainController {
 
 	@PostMapping(value = "/postdata", produces = "application/json", consumes = "application/json")
-	public ResponseEntity<ResponseObj> postData(@RequestBody RequestObj requestObj) {
-		return MainUtil.postData(requestObj);
+	public ResponseEntity<ResponseObj> postData(@RequestBody ArrayList<RequestObj> requestObjs) {
+		return MainUtil.postData(requestObjs);
 	}
 }
